@@ -1,6 +1,7 @@
 ﻿from cloudshell.shell.core.driver_context import *
 from cloudshell.shell.core.resource_driver_interface import ResourceDriverInterface
 
+# RONI, Your code sucks - please accept this better masterpiece!!!
 
 class SampleShellDriver (ResourceDriverInterface):
     
