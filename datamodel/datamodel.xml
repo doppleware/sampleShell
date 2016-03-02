@@ -13,7 +13,7 @@
       </AttributeInfo>
   </Attributes>
   <ResourceFamilies>
-    <ResourceFamily Name="Generic Resource" IsConnectable="false" IsLockedByDefault="true" Description="" IsSearchable="true" ResourceType="Resource">
+    <ResourceFamily Name="Generic Resource" IsConnectable="false" IsLockedByDefault="true" Description="" IsSearchable="false" ResourceType="Resource">
       <AttachedAttributes>
       </AttachedAttributes>
       <AttributeValues>
