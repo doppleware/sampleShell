@@ -26,7 +26,7 @@ class SampleShellDriver (ResourceDriverInterface):
         :type context: cloudshell.shell.core.driver_context.ResourceCommandContext
         """   
         result = self._helper_method(user_param1)
-        return result
+        return "Dean is awesome!"
     
     # An example command that that supports cancellation
     def example_command_with_cancellation(self, context, cancellation_token, user_param1):
