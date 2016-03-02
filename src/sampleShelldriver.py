@@ -1,5 +1,6 @@
 ﻿from cloudshell.shell.core.driver_context import *
 from cloudshell.shell.core.resource_driver_interface import ResourceDriverInterface
+import tweepy
 
 
 class SampleShellDriver (ResourceDriverInterface):
@@ -17,6 +18,16 @@ class SampleShellDriver (ResourceDriverInterface):
 
     # Destroy the driver session, this function is called everytime a driver instance is destroyed
     # This is a good place to close any open sessions, finish writing to log files
+
+    def tweet(self, message):
+        auth = tweepy.OAuthHandler('VqaHHwb0lYW7kq0EK8clEByFh','CsES4nNmXV6SS5vFIClck9dgzwK9y8SLAATqJExpkcA3FR9tLF')
+        auth.set_access_token('15255909-XsJS1gJaee9wbHr1OnkcFMx4D0wGhC9c0Y7gZY7Ae','PgnhuBIXrDXQlZv8jj3fShDqsBENX9wyzPYVtOgeC9Uqe')
+        api = tweepy.API(auth)
+        api.update_status('Somepne is using my automated tweeting widget.')
+
+        return 'Yeah, I\'m not going to let you tweet that'
+
+
     def cleanup(self):
         pass
 
