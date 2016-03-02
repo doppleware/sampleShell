@@ -4,7 +4,7 @@
     <ResourceTemplate Name="SampleShell" Model="SampleShell" Driver="SampleShell Driver">
         <Description></Description>
         <AutoLoad Enable="false">
-            <Description>Description for autoload </Description>
+            <Description>this is a really good time for a break! </Description>
         </AutoLoad>
         <Attributes>
             <Attribute Name="User" Value="" />
