@@ -37,7 +37,37 @@ class SampleShellDriver (ResourceDriverInterface):
         result = self._helper_method(user_param1)
 
         return result 
-    
+
+    def special_command (self, context):
+        """
+        :type context: cloudshell.shell.core.driver_context.ResourceCommandContext
+        """
+
+        return ""
+
     # private functions are always hidden
     def _helper_method(self,title):
         return "---====%s====---" % title
+
+    def get_inventory(self, context):
+        """
+        :type context: cloudshell.shell.core.driver_context.AutoLoadCommandContext
+        """
+        # example autoload return results
+        resources = [AutoLoadResource('Generic Chassis', 'Chassis 1', '1'),
+                  AutoLoadResource('Generic Module', 'Module 1', '1/1'),
+                  AutoLoadResource('Generic Port', 'Port 1', '1/1/1')]
+
+        attributes = [
+           AutoLoadAttribute('', 'Location', 'Santa Clara Lab'),
+           AutoLoadAttribute('', 'Model', 'Catalyst 3850'),
+           AutoLoadAttribute('', 'Vendor', 'Cisco'),
+           AutoLoadAttribute('1', 'Serial Number', 'JAE053002JD'),
+           AutoLoadAttribute('1', 'Model', 'WS-X4232-GB-RJ'),
+           AutoLoadAttribute('1/1', 'Model', 'WS-X4233-GB-EJ'),
+           AutoLoadAttribute('1/1', 'Serial Number', 'RVE056702UD'),
+           AutoLoadAttribute('1/1/1', 'IPv4 Address', '192.168.10.7')
+        ]
+
+        result = AutoLoadDetails(resources, attributes)
+        return result
