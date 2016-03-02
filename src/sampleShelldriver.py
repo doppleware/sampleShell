@@ -37,7 +37,14 @@ class SampleShellDriver (ResourceDriverInterface):
         result = self._helper_method(user_param1)
 
         return result 
-    
+
+    def special_command (self, context):
+        """
+        :type context: cloudshell.shell.core.driver_context.ResourceCommandContext
+        """
+
+        return ""
+
     # private functions are always hidden
     def _helper_method(self,title):
         return "---====%s====---" % title
