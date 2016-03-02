@@ -1,1 +1,2 @@
 cloudshell-shell-core
+tweepy
