@@ -1,4 +1,5 @@
-﻿from cloudshell.shell.core.driver_context import *
+﻿from cloudshell.core.logger.qs_logger import get_qs_logger
+from cloudshell.shell.core.driver_context import *
 from cloudshell.shell.core.resource_driver_interface import ResourceDriverInterface
 
 
@@ -18,6 +19,7 @@ class SampleShellDriver (ResourceDriverInterface):
     # Destroy the driver session, this function is called everytime a driver instance is destroyed
     # This is a good place to close any open sessions, finish writing to log files
     def cleanup(self):
+
         pass
 
     # An example command
@@ -34,10 +36,13 @@ class SampleShellDriver (ResourceDriverInterface):
         :type context: cloudshell.shell.core.driver_context.ResourceCommandContext
         :type cancellation_token: cloudshell.shell.core.driver_context.CancellationContext
         """
+        logger = get_qs_logger("my_log", context.resource.name, reservation_id=context.reservation.reservation_id)
+        logger.info("This is a test log")
         result = self._helper_method(user_param1)
 
         return result 
     
     # private functions are always hidden
     def _helper_method(self,title):
+
         return "---====%s====---" % title
