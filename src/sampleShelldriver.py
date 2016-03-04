@@ -14,7 +14,7 @@ class SampleShellDriver (ResourceDriverInterface):
         :type context: cloudshell.shell.core.driver_context.InitCommandContext
         """
         return 'Finished initializing'
-
+	#this is a change
     # Destroy the driver session, this function is called everytime a driver instance is destroyed
     # This is a good place to close any open sessions, finish writing to log files
     def cleanup(self):
