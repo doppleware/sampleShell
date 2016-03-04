@@ -1,4 +1,4 @@
-﻿from cloudshell.shell.core.driver_context import *
+from cloudshell.shell.core.driver_context import *
 from cloudshell.shell.core.resource_driver_interface import ResourceDriverInterface
 
 
@@ -13,6 +13,8 @@ class SampleShellDriver (ResourceDriverInterface):
         """
         :type context: cloudshell.shell.core.driver_context.InitCommandContext
         """
+		l = get_qs_logger()
+		l.error('shouldnt have let Chris modify your code base')
         return 'Finished initializing'
 
     # Destroy the driver session, this function is called everytime a driver instance is destroyed
